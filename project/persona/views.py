@@ -65,3 +65,23 @@ class ClienteList(ListView):
     model = models.Cliente
     # context_object_name = "productos"
     # template_name = "producto/productocategoria___list.html"
+
+class ClienteCreate(CreateView):
+    model = models.Cliente
+    form_class = forms.ClienteForm
+    success_url = reverse_lazy("persona:cliente_list")
+
+class ClienteUpdate(UpdateView):
+    model = models.Cliente
+    form_class = forms.ClienteForm
+    success_url = reverse_lazy("persona:cliente_list")
+
+class ClienteDetail(DetailView):
+    model = models.Cliente
+    # context_object_name = "producto"
+
+class ClienteDelete(DeleteView):
+    model = models.Cliente
+    # template_name = "producto/productocategoria_delete.html"
+    success_url = reverse_lazy("persona:cliente_list")
+

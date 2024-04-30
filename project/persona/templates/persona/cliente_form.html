@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Productos: Cambiar una Categoría de Productos
+    Personas: Creacion de un cliente
 {% endblock titulo %}
 
 {% block contenido %}
@@ -14,7 +14,7 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:productocategoria_list' %}">Volver</a>
+        <a href="{% url 'persona:cliente_list' %}">Volver a Clientes</a>
     </div>
 
 {% endblock contenido %}

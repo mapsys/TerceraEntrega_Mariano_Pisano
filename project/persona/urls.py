@@ -21,8 +21,8 @@ urlpatterns = [
     path("usuario/create/", views.UsuarioCreate.as_view(), name="usuario_create"),
     # URLs de CLientes
     path("cliente/list/", views.ClienteList.as_view(), name="cliente_list"),
-    # path("cliente/detail/<int:pk>", views.cliente_detail, name="cliente_detail"),
-    # path("cliente/update/<int:pk>", views.cliente_update, name="cliente_update"),
-    # path("cliente/delete/<int:pk>", views.cliente_delete, name="cliente_delete"),
-    # path("cliente/create/", views.cliente_create, name="cliente_create"),
+    path("cliente/detail/<str:pk>", views.ClienteDetail.as_view(), name="cliente_detail"),
+    path("cliente/update/<str:pk>", views.ClienteUpdate.as_view(), name="cliente_update"),
+    path("cliente/delete/<str:pk>", views.ClienteDelete.as_view(), name="cliente_delete"),
+    path("cliente/create/", views.ClienteCreate.as_view(), name="cliente_create"),
 ]

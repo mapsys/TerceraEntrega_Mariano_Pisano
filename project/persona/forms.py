@@ -33,7 +33,7 @@ class ClienteForm(forms.ModelForm):
         model = models.Cliente
         fields = "__all__"
         widgets = {
-             "user": forms.TextInput(attrs={"class": "form-control"}),
+            "user": forms.TextInput(attrs={"class": "form-control"}),
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
             "apellido": forms.TextInput(attrs={"class": "form-control"}),
             "email": forms.EmailInput(attrs={"class": "form-control"}),

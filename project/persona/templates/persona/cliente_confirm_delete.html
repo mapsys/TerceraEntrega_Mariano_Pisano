@@ -1,19 +1,19 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Productos: Borrar una Categoría de Productos
+    Personas: Borrado de un cliente
 {% endblock titulo %}
 
 {% block contenido %}
     
-    <p class="fs-5 fst-italic">¿Confirma eliminar "{{ categoria.nombre }}"?</p>
+    <p class="fs-5 fst-italic">¿Confirma eliminar "{{ cliente.user }}"?</p>
 
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:home' %}">Volver al inicio de Producto</a>
+        <a href="{% url 'persona:cliente_list' %}">Volver a Clientes</a>
     </div>
 
 {% endblock contenido %}

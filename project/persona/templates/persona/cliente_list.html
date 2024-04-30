@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 {% block titulo %}
-    Productos: Mantenimiento de Categorías de Productos
+    Personas: Mantenimiento de clientes
 {% endblock titulo %}
 
 {% block contenido %}
@@ -10,22 +10,16 @@
             <input type="text" name="consulta" placeholder="Buscar...">
         </form>
     </div>
-    {% comment  %}
-        
-
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:productocategoria_create' %}">Crear Categorías de Productos</a>
+        <a href="{% url 'persona:cliente_create' %}">Crear un nuevo cliente</a>
     </div>
-    {% endcomment %}
     <ul>
 
         {% for cliente in object_list %}
-            <li>{{ cliente.nombre }}
-                {% comment  %}
-                <a href="{% url 'tienda:productocategoria_detail' categoria.codigo %}">Detalle</a>
-                <a href="{% url 'tienda:productocategoria_update' categoria.codigo %}">Cambiar</a>
-                <a href="{% url 'tienda:productocategoria_delete' categoria.codigo %}">Borrar</a>
-                {% endcomment %}
+            <li>{{ cliente.user }} - {{ cliente.apellido }}, {{ cliente.nombre }}
+                <a href="{% url 'persona:cliente_detail' cliente.usuario_ptr_id %}">Detalle</a>
+                <a href="{% url 'persona:cliente_update' cliente.usuario_ptr_id %}">Cambiar</a>
+                <a href="{% url 'persona:cliente_delete' cliente.usuario_ptr_id %}">Borrar</a>  
             </li>
         {% endfor %}
     </ul>
