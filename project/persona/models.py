@@ -7,7 +7,7 @@ class Rol(models.Model):
     descripcion = models.CharField(max_length=50, verbose_name="Descripción", null=True, blank=True)
 
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre} - {self.descripcion}" 
     class Meta:
         verbose_name_plural = "Roles"
     

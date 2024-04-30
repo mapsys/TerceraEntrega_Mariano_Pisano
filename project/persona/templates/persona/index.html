@@ -1,20 +1,22 @@
 {% extends 'core/base.html' %}
 {% block titulo %}
-    Persona:     Mantenimiento de Usuarios del sistema y sus diferentes roles
-
+    Usuarios: Mantenimiento de usuarios y clientes
 {% endblock titulo %}
 {% block contenido %}
-    <div class="row row-cols-1 row-cols-md-2">
-        {% for usuario in usuarios %}
-            <div class="col mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title">{{ usuario.nombre }} {{ usuario.apellido }}</h2>
-                        <p class="card-text text-muted">Mail {{ usuario.mail }}</p>
-                        <p class="card-text">Rol: {{usuario.rol}}</p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+
+<div class="fs-3 pb-4">
+    <a href="{% url 'persona:rol_list' %}">Roles de Usuarios</a>
+</div>
+<div class="fs-3 pb-4">
+    <a href="{% url 'persona:usuario_list' %}"> Usuarios del Sistema</a>
+</div>
+<div class="fs-3 pb-4">
+    <a href="{% url 'persona:cliente_list' %}"> Clientes de la tienda</a>
+</div>
+ 
+    
+    <div class="fs-3 pb-4">
+        <a href="{% url 'core:home' %}">Volver a Inicio</a>
     </div>
+
 {% endblock contenido %}
