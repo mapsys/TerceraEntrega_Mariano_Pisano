@@ -11,7 +11,7 @@
             <li>Total: {{ carrito.total }}</li>
             <ul>
             {% for producto in  carrito.productos.all %}
-            <li>producto: {{ carrito.producto.nombre }}</li>
+                <li>producto: {{ carrito.producto }}</li>
             {% endfor %}
             
         </ul>

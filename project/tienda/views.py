@@ -129,6 +129,7 @@ def carrito_create(request):
 
 def carrito_detail(request, pk: int):
     query = models.Carrito.objects.get(id=pk)
+    print(query.productos.all)
     return render(request, "tienda/carrito_detail.html", {"carrito": query})
 
 def carrito_update(request, pk: int):

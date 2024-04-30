@@ -10,13 +10,13 @@
             <input type="text" name="consulta" placeholder="Buscar...">
         </form>
     </div>
+    <div class="fs-3 pb-4">
+        <a href="{% url 'tienda:carrito_create' %}">Crear Carrito</a>
+    </div>
     <ul>
-        {% comment  %}
-        {% for carrito in carritos %}
-        {% endcomment %}
 
         {% for carrito in carritos %}
-            <li>{{ carrito.total }}
+            <li>{{ carrito }}
 
                 <a href="{% url 'tienda:carrito_detail' carrito.id %}">Detalle</a>
                 <a href="{% url 'tienda:carrito_update' carrito.id %}">Cambiar</a>
@@ -27,7 +27,7 @@
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:carrito_list' %}">Volver al inicio de Producto</a>
+        <a href="{% url 'tienda:home' %}">Volver al inicio de Tienda</a>
     </div>
 
 {% endblock contenido %}

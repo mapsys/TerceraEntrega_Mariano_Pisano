@@ -19,6 +19,8 @@ class Producto(models.Model):
 
     def __str__(self):
         return f"{self.codigo} - {self.nombre} - {self.precio} - {self.categoria}"
+    def __repr__(self):
+        return f"{self.codigo} - {self.nombre} - {self.precio} - {self.categoria}"
     
 class Carrito(models.Model):
     cliente = models.ForeignKey(modelPersona.Cliente, on_delete=models.CASCADE)
@@ -27,4 +29,4 @@ class Carrito(models.Model):
     productos = models.ManyToManyField(Producto)
 
     def __str__(self):
-        return f"{self.cliente} - {self.fecha} - {self.total}"
+        return f"Cliente: {self.cliente.nombre}, {self.cliente.apellido} - Total: {self.total}"
