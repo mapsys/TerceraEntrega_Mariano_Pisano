@@ -1,31 +1,27 @@
-{% extends 'core/base.html' %} {% block titulo %} Productos: Lista deProductos
-{% endblock titulo %} {% block contenido %}
+{% extends 'core/base.html' %}
+ {% block titulo %} usuarios: Lista de Usuarios 
+ {%endblock titulo %} 
+ {% block contenido %}
 
 <div class="py-lg-4">
   <form action="{% url 'persona:home' %}" method="get">
     <input type="text" name="consulta" placeholder="Buscar..." />
   </form>
 </div>
-{% comment %}
-
 <div class="fs-3 pb-4">
-  <a href="{% url 'tienda:producto_create' %}">Crear Productos</a>
+  <a href="{% url 'persona:usuario_create' %}">Crear usuarios</a>
 </div>
-{% endcomment %}
 <ul>
   {% for usuario in object_list %} 
-  {% if usuario.rol.nombre != "Cliente" %} 
-  <li>
-  {{usuario.user}} - {{usuario.rol.nombre}}
-  {% comment %}
+  {% if usuario.rol.nombre != "Cliente" %}
+    <li>
+       {{usuario.user}} - {{usuario.rol.nombre}}
 
-      <a href="{% url 'tienda:producto_detail' producto.codigo %}">Detalle</a>
-      <a href="{% url 'tienda:producto_update' producto.codigo %}">Cambiar</a>
-      <a href="{% url 'tienda:producto_delete' producto.codigo %}">Borrar</a>
-    {% endcomment %} 
-  </li>
-    {% endif %}
-
+      <a href="{% url 'persona:usuario_detail' usuario.user %}">Detalle</a>
+      <a href="{% url 'persona:usuario_update' usuario.user %}">Cambiar</a>
+      <a href="{% url 'persona:usuario_delete' usuario.user %}">Borrar</a>
+    </li>
+  {% endif %} 
   {% endfor %}
 </ul>
 

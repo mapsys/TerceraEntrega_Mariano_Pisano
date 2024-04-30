@@ -10,22 +10,16 @@
             <input type="text" name="consulta" placeholder="Buscar...">
         </form>
     </div>
-    {% comment  %}
-        
-
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:carrito_create' %}">Crear Carrito</a>
+        <a href="{% url 'persona:rol_create' %}">Crear rol</a>
     </div>
-    {% endcomment %}
     <ul>
 
         {% for rol in object_list %}
             <li>{{ rol }}
-                {% comment  %}
-                <a href="{% url 'persona:carrito_detail' carrito.id %}">Detalle</a>
-                <a href="{% url 'persona:carrito_update' carrito.id %}">Cambiar</a>
-                <a href="{% url 'persona:carrito_delete' carrito.id %}">Borrar</a>
-                {% endcomment %}                    
+                <a href="{% url 'persona:rol_detail' rol.id %}">Detalle</a>
+                <a href="{% url 'persona:rol_update' rol.id %}">Cambiar</a>
+                <a href="{% url 'persona:rol_delete' rol.id %}">Borrar</a>                   
             </li>
         {% endfor %}
     </ul>

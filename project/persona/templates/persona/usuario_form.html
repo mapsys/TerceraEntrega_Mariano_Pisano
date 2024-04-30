@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Productos: Cambiar un Producto
+    Personas: Creacion de usuarios
 {% endblock titulo %}
 
 {% block contenido %}
@@ -14,7 +14,7 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:producto_list' %}">Volver</a>
+        <a href="{% url 'persona:rol_list' %}">Volver a Usuarios</a>
     </div>
 
 {% endblock contenido %}

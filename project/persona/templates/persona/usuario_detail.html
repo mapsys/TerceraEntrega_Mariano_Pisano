@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Personas: Detalle de Usuario {{ usuario.user }}
+{% endblock titulo %}
+
+{% block contenido %}
+
+    <ul>
+            <li>Nombre: {{ usuario.nombre }}</li>
+            <li>Apellido: {{ usuario.apellido }}</li>
+            <li>Mail: {{ usuario.email }}</li>
+            <li>Rol: {{ usuario.rol }}</li>
+    </ul>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'persona:usuario_list' %}">Volver a Usuarios</a>
+    </div>
+
+{% endblock contenido %}

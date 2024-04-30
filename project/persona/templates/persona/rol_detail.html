@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Productos: Detalle de Producto
+{% endblock titulo %}
+
+{% block contenido %}
+
+    <ul>
+            <li>Nombre: {{ rol.nombre }}</li>
+            <li>Descripcion: {{ rol.descripcion }}</li>
+    </ul>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'persona:rol_list' %}">Volver a Roles</a>
+    </div>
+
+{% endblock contenido %}

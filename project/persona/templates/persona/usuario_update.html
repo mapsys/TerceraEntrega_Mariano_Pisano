@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Productos: Crear un Carrito
+    Personas: Update de Usuario
 {% endblock titulo %}
 
 {% block contenido %}
@@ -14,7 +14,7 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:home' %}">Volver al inicio de Producto</a>
+        <a href="{% url 'persona:usuario_list' %}">Volver a usuarios</a>
     </div>
 
 {% endblock contenido %}
