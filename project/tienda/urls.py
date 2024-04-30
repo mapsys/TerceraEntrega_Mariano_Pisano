@@ -21,4 +21,8 @@ urlpatterns = [
     path("producto/create/", views.producto_create, name="producto_create"),
     # URLs de Carritos
     path("carrito/list/", views.carrito_list, name="carrito_list"),
+    path("carrito/detail/<int:pk>", views.carrito_detail, name="carrito_detail"),
+    path("carrito/update/<int:pk>", views.carrito_update, name="carrito_update"),
+    path("carrito/delete/<int:pk>", views.carrito_delete, name="carrito_delete"),
+    path("carrito/create/", views.carrito_create, name="carrito_create"),
 ]

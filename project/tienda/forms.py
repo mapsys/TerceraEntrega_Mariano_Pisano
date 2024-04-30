@@ -28,3 +28,14 @@ class ProductoForm(forms.ModelForm):
             "precio": forms.TextInput(attrs={"class": "form-control"}),
             "categoria": forms.Select(attrs={"class": "form-control"}),
         }
+
+class CarritoForm(forms.ModelForm):
+    class Meta:
+        model = models.Carrito
+        fields = "__all__"
+        widgets = {
+            "cliente": forms.Select(attrs={"class": "form-control"}),
+            "fecha": forms.DateInput(attrs={"class": "form-control"}),
+            "total": forms.TextInput(attrs={"class": "form-control"}),
+            "productos": forms.SelectMultiple(attrs={"class": "form-control"}),
+        }

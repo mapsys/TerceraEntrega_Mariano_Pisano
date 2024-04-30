@@ -14,15 +14,6 @@ def home(request):
 
 
 
-def carrito_list(request):
-    consulta = request.GET.get("consulta", None)
-    if consulta:
-        print(consulta)
-        query = models.Carrito.objects.filter(nombre__icontains=consulta)
-    else:
-        query = models.Carrito.objects.all()
-    context = {"carritos": query}
-    return render(request, "tienda/carrito_list.html", context)
 
 
 # SECCION DE CRUD DE CATEGORIAS DE PRODUCTOS
@@ -113,3 +104,47 @@ def producto_delete(request, pk: int):
         query.delete()
         return redirect("tienda:producto_list")
     return render(request, "tienda/producto_delete.html", context={"producto": query})
+
+
+# SECCION DE CRUD DE CARRITOS
+def carrito_list(request):
+    consulta = request.GET.get("consulta", None)
+    if consulta:
+        print(consulta)
+        query = models.Carrito.objects.filter(nombre__icontains=consulta)
+    else:
+        query = models.Carrito.objects.all()
+    context = {"carritos": query}
+    return render(request, "tienda/carrito_list.html", context)
+
+def carrito_create(request):
+    if request.method == "POST":
+        form = forms.CarritoForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect("tienda:carrito_list")
+    else:  # request.method == "GET"
+        form = forms.CarritoForm()
+    return render(request, "tienda/carrito_create.html", context={"form": form})
+
+def carrito_detail(request, pk: int):
+    query = models.Carrito.objects.get(id=pk)
+    return render(request, "tienda/carrito_detail.html", {"carrito": query})
+
+def carrito_update(request, pk: int):
+    query = models.Carrito.objects.get(id=pk)
+    if request.method == "POST":
+        form = forms.CarritoForm(request.POST, instance=query)
+        if form.is_valid:
+            form.save()
+            return redirect("tienda:carrito_list")
+    else:  # request.method == "GET"
+        form = forms.CarritoForm(instance=query)
+    return render(request, "tienda/carrito_update.html", context={"form": form})
+
+def carrito_delete(request, pk: int):
+    query = models.Producto.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("tienda:carrito_list")
+    return render(request, "tienda/carrito_delete.html", context={"carrito": query})
