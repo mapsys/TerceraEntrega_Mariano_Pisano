@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Visualizacion de carritos
+{% endblock titulo %}
+
+{% block contenido %}
+
+    <div class="py-lg-4 ">
+        <form action="{% url 'tienda:home' %}" method="get">
+            <input type="text" name="consulta" placeholder="Buscar...">
+        </form>
+    </div>
+    <ul>
+        {% comment  %}
+        {% for carrito in carritos %}
+        {% endcomment %}
+
+        {% for carrito in carritos %}
+            <li>{{ carrito.total }}
+                {% comment  %}
+
+                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
+                <a href="{% url 'producto:productocategoria_update' producto.id %}">Cambiar</a>
+                <a href="{% url 'producto:productocategoria_delete' producto.id %}">Borrar</a>
+                                    
+                {% endcomment %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'tienda:home' %}">Volver al inicio de Producto</a>
+    </div>
+
+{% endblock contenido %}

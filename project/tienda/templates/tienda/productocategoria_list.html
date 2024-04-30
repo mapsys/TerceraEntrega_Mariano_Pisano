@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Productos: Mantenimiento de Categorías de Productos
+{% endblock titulo %}
+
+{% block contenido %}
+
+    <div class="py-lg-4 ">
+        <form action="{% url 'tienda:home' %}" method="get">
+            <input type="text" name="consulta" placeholder="Buscar...">
+        </form>
+    </div>
+    <div class="fs-3 pb-4">
+        <a href="{% url 'tienda:productocategoria_create' %}">Crear Categorías de Productos</a>
+    </div>
+    <ul>
+        {% comment  %}
+        {% for categoria in categorias %}
+        {% endcomment %}
+
+        {% for categoria in categorias %}
+            <li>{{ categoria.nombre }}
+                <a href="{% url 'tienda:productocategoria_detail' categoria.codigo %}">Detalle</a>
+                <a href="{% url 'tienda:productocategoria_update' categoria.codigo %}">Cambiar</a>
+                <a href="{% url 'tienda:productocategoria_delete' categoria.codigo %}">Borrar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'tienda:home' %}">Volver al inicio de Producto</a>
+    </div>
+
+{% endblock contenido %}

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Tienda: Mantenimiento de la tienda
+{% endblock titulo %}
+{% block contenido %}
+
+<div class="fs-3 pb-4">
+    <a href="{% url 'tienda:productocategoria_list' %}">Categorías de Productos</a>
+</div>
+<div class="fs-3 pb-4">
+    <a href="{% url 'tienda:producto_list' %}"> Productos</a>
+</div>
+<div class="fs-3 pb-4">
+    <a href="{% url 'tienda:carrito_list' %}"> Carritos</a>
+</div>
+ 
+    
+    <div class="fs-3 pb-4">
+        <a href="{% url 'core:home' %}">Volver a Inicio</a>
+    </div>
+
+{% endblock contenido %}
