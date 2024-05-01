@@ -2,14 +2,10 @@
 {% block titulo %}
     Visualizacion de Roles
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    Aqui podras ver un listado de los Roles existentes en el sistema
+{% endblock Subtitulo %}
 {% block contenido %}
-
-    <div class="py-lg-4 ">
-        <form action="{% url 'tienda:home' %}" method="get">
-            <input type="text" name="consulta" placeholder="Buscar...">
-        </form>
-    </div>
     <div class="fs-3 pb-4">
         <a href="{% url 'persona:rol_create' %}">Crear rol</a>
     </div>
@@ -25,7 +21,7 @@
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:home' %}">Volver a Personas</a>
+        <a class="btn btn-primary" href="{% url 'persona:home' %}">Volver a Personas</a>
     </div>
 
 {% endblock contenido %}

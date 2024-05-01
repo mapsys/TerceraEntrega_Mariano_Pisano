@@ -3,7 +3,9 @@
 {% block titulo %}
    Personas: Borrar un usuario
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
     
     <p class="fs-5 fst-italic">¿Confirma eliminar "{{ usuario.user }}"?</p>
@@ -13,7 +15,7 @@
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:usuario_list' %}">Volver a Usuarios</a>
+        <a class="btn btn-primary" href="{% url 'persona:usuario_list' %}">Volver a Usuarios</a>
     </div>
 
 {% endblock contenido %}

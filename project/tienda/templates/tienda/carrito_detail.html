@@ -2,23 +2,30 @@
 {% block titulo %}
     Productos: Detalle de Producto
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
 
     <ul>
             <li>Cliente: {{ carrito.cliente }}</li>
             <li>Fecha: {{ carrito.fecha }}</li>
             <li>Total: {{ carrito.total }}</li>
+            <p>PRODUCTOS</p>
             <ul>
-            {% for producto in  carrito.productos.all %}
-                <li>producto: {{ carrito.producto }}</li>
-            {% endfor %}
+                {% for producto in carrito.productos.all %}
+                <li>
+                Codigo : {{ producto.codigo }}    
+                Nombre: {{ producto.nombre }}
+                Precio : {{ producto.precio }}
+                </li>
+               {% endfor %}
             
         </ul>
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:carrito_list' %}">Volver</a>
+        <a class="btn btn-primary" href="{% url 'tienda:carrito_list' %}">Volver</a>
     </div>
 
 {% endblock contenido %}

@@ -3,7 +3,9 @@
 {% block titulo %}
     Productos: Cambiar un Carrito
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
     
     <form method="post">
@@ -11,7 +13,7 @@
         <table>
             {{ form.as_table }}
         </table>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary my-5 bg-success ">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
         <a href="{% url 'tienda:carrito_list' %}">Volver</a>

@@ -3,7 +3,9 @@
 {% block titulo %}
     Personas: Borrado de un cliente
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
     
     <p class="fs-5 fst-italic">¿Confirma eliminar "{{ cliente.user }}"?</p>
@@ -13,7 +15,7 @@
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:cliente_list' %}">Volver a Clientes</a>
+        <a class="btn btn-primary" href="{% url 'persona:cliente_list' %}">Volver a Clientes</a>
     </div>
 
 {% endblock contenido %}

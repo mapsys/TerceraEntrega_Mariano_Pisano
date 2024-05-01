@@ -3,7 +3,9 @@
 {% block titulo %}
     Productos: Borrar un Rol
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
     
     <p class="fs-5 fst-italic">¿Confirma eliminar "{{ rol.nombre }}"?</p>
@@ -13,7 +15,7 @@
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:rol_list' %}">Volver a Roles</a>
+        <a class="btn btn-primary" href="{% url 'persona:rol_list' %}">Volver a Roles</a>
     </div> 
 
 {% endblock contenido %}

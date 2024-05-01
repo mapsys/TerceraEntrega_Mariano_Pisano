@@ -2,7 +2,9 @@
 {% block titulo %}
     Personas: Detalle del cliente {{ cliente.user }}
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
 
     <ul>
@@ -14,7 +16,7 @@
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:cliente_list' %}">Volver a Clientes</a>
+        <a class="btn btn-primary" href="{% url 'persona:cliente_list' %}">Volver a Clientes</a>
     </div>
 
 {% endblock contenido %}

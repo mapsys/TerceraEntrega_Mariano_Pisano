@@ -2,7 +2,9 @@
 {% block titulo %}
     Productos: Detalle de Producto
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
 
     <ul>
@@ -14,7 +16,7 @@
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:producto_list' %}">Volver</a>
+        <a class="btn btn-primary" href="{% url 'tienda:producto_list' %}">Volver</a>
     </div>
 
 {% endblock contenido %}

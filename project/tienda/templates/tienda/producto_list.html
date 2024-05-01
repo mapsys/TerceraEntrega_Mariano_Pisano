@@ -1,11 +1,9 @@
 {% extends 'core/base.html' %} {% block titulo %} Productos: Lista deProductos
-{% endblock titulo %} {% block contenido %}
-
-<div class="py-lg-4">
-  <form action="{% url 'tienda:home' %}" method="get">
-    <input type="text" name="consulta" placeholder="Buscar..." />
-  </form>
-</div>
+{% endblock titulo %}
+{% block Subtitulo %}
+    Aqui podras ver el Listado de productos
+{% endblock Subtitulo %}
+ {% block contenido %}
 <div class="fs-3 pb-4">
     <a href="{% url 'tienda:producto_create' %}">Crear Productos</a>
 </div>
@@ -22,7 +20,7 @@
 </ul>
 
 <div class="fs-3 pb-4">
-  <a href="{% url 'tienda:home' %}">Volver al inicio de la tienda</a>
+  <a class="btn btn-primary" href="{% url 'tienda:home' %}">Volver al inicio de la tienda</a>
 </div>
 
 {% endblock contenido %}

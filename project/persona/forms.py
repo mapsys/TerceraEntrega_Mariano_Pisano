@@ -35,6 +35,11 @@ class UsuarioForm(forms.ModelForm):
         }
 
 class ClienteForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ClienteForm, self).__init__(*args, **kwargs)
+        # Define el valor fijo para el campo 'rol'
+        self.fields['rol'].queryset = models.Rol.objects.filter(nombre="Cliente")
     class Meta:
         model = models.Cliente
         fields = "__all__"

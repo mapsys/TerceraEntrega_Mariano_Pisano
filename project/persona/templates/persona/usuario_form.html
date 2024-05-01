@@ -13,10 +13,10 @@
         <table>
             {{ form.as_table }}
         </table>
-        <button type="submit" class="btn btn-primary mt-5 ">Guardar</button>
+        <button type="submit" class="btn btn-primary my-5 bg-success ">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:rol_list' %}">Volver a Usuarios</a>
+        <a class="btn btn-primary " href="{% url 'persona:rol_list' %}">Volver a Usuarios</a>
     </div>
 
 {% endblock contenido %}

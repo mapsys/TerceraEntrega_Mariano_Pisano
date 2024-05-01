@@ -3,7 +3,9 @@
 {% block titulo %}
     Personas: Update de Usuario
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    
+{% endblock Subtitulo %}
 {% block contenido %}
     
     <form method="post">
@@ -14,7 +16,7 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'persona:usuario_list' %}">Volver a usuarios</a>
+        <a class="btn btn-primary" href="{% url 'persona:usuario_list' %}">Volver a usuarios</a>
     </div>
 
 {% endblock contenido %}

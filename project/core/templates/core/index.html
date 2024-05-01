@@ -24,8 +24,31 @@
     
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
-        {% include 'core/components/card.html' with titulo="About" texto="Aqui podras leer un poco sobre mi y mi experiencia" %}
-        {% include 'core/components/card.html' with titulo="Personas"  variable="persona/index.html" texto="Desde aqui podras acceder al mantenimiento de personas?"  %}
-        {% include 'core/components/card.html' with titulo="Tienda" texto="Desde aqui podras manejar productos y carritos" %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-90">
+              <div class="card-body">
+                <a class="btn btn-primary" href="{% url 'core:about' %}">About</a>
+                <p class="card-text">Aqui podras leer un poco sobre mi y mi experiencia</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card h-90">
+              <div class="card-body">
+               <a class="btn btn-primary" href="{% url 'persona:home' %}">Personas</a>
+                <p class="card-text">Desde aqui podras acceder al mantenimiento de personas</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card h-90">
+              <div class="card-body">
+                <a class="btn btn-primary" href="{% url 'tienda:home' %}">Tienda</a>
+                <p class="card-text">Desde aqui podras manejar productos y carritos</p>
+              </div>
+            </div>
+          </div>
+                              
+
     </div>
 {% endblock contenido %}

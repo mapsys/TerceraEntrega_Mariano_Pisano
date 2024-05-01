@@ -2,14 +2,10 @@
 {% block titulo %}
     Visualizacion de carritos
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    Aqui podras ver los carritos existentes en la tienda
+{% endblock Subtitulo %}
 {% block contenido %}
-
-    <div class="py-lg-4 ">
-        <form action="{% url 'tienda:home' %}" method="get">
-            <input type="text" name="consulta" placeholder="Buscar...">
-        </form>
-    </div>
     <div class="fs-3 pb-4">
         <a href="{% url 'tienda:carrito_create' %}">Crear Carrito</a>
     </div>
@@ -21,13 +17,14 @@
                 <a href="{% url 'tienda:carrito_detail' carrito.id %}">Detalle</a>
                 <a href="{% url 'tienda:carrito_update' carrito.id %}">Cambiar</a>
                 <a href="{% url 'tienda:carrito_delete' carrito.id %}">Borrar</a>
+                </button>
                                     
             </li>
         {% endfor %}
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'tienda:home' %}">Volver al inicio de Tienda</a>
+        <a class="btn btn-primary" href="{% url 'tienda:home' %}">Volver al inicio de Tienda</a>
     </div>
 
 {% endblock contenido %}
