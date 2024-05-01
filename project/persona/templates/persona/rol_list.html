@@ -13,9 +13,10 @@
 
         {% for rol in object_list %}
             <li>{{ rol }}
-                <a href="{% url 'persona:rol_detail' rol.id %}">Detalle</a>
-                <a href="{% url 'persona:rol_update' rol.id %}">Cambiar</a>
-                <a href="{% url 'persona:rol_delete' rol.id %}">Borrar</a>                   
+                <a href="{% url 'persona:rol_detail' rol.id %}"><i title="Ver detalle" class="bi bi-eye-fill" style="color:chartreuse;""></i></a>
+                <a href="{% url 'persona:rol_update' rol.id %}"> <i title="Cambiar" class="bi bi-pencil-fill" style="color:blue"></i></a>
+                <a href="{% url 'persona:rol_delete' rol.id %}"> <i title="Borrar"class="bi bi-trash-fill" style="color:red"></i> </a>       
+          
             </li>
         {% endfor %}
     </ul>

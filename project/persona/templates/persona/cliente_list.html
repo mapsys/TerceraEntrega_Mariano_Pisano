@@ -13,9 +13,10 @@
 
         {% for cliente in object_list %}
             <li>{{ cliente.user }} - {{ cliente.apellido }}, {{ cliente.nombre }}
-                <a href="{% url 'persona:cliente_detail' cliente.usuario_ptr_id %}">Detalle</a>
-                <a href="{% url 'persona:cliente_update' cliente.usuario_ptr_id %}">Cambiar</a>
-                <a href="{% url 'persona:cliente_delete' cliente.usuario_ptr_id %}">Borrar</a>  
+                <a href="{% url 'persona:cliente_detail' cliente.usuario_ptr_id %}"> <i title="Ver detalle" class="bi bi-eye-fill" style="color:chartreuse;""></</a>
+                <a href="{% url 'persona:cliente_update' cliente.usuario_ptr_id %}"><i title="Cambiar" class="bi bi-pencil-fill" style="color:blue"></i></a>
+                <a href="{% url 'persona:cliente_delete' cliente.usuario_ptr_id %}"><i title="Borrar"class="bi bi-trash-fill" style="color:red"></i> </a>  
+
             </li>
         {% endfor %}
     </ul>

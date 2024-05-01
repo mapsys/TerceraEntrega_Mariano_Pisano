@@ -14,9 +14,10 @@
     <li>
        {{usuario.user}} - {{usuario.rol.nombre}}
 
-      <a href="{% url 'persona:usuario_detail' usuario.user %}">Detalle</a>
-      <a href="{% url 'persona:usuario_update' usuario.user %}">Cambiar</a>
-      <a href="{% url 'persona:usuario_delete' usuario.user %}">Borrar</a>
+      <a href="{% url 'persona:usuario_detail' usuario.user %}"><i title="Ver detalle" class="bi bi-eye-fill" style="color:chartreuse;""></i></a>
+      <a href="{% url 'persona:usuario_update' usuario.user %}"><i title="Cambiar" class="bi bi-pencil-fill" style="color:blue"></i></a>
+      <a href="{% url 'persona:usuario_delete' usuario.user %}"><i title="Borrar"class="bi bi-trash-fill" style="color:red"></i></a>
+
     </li>
   {% endif %} 
   {% endfor %}

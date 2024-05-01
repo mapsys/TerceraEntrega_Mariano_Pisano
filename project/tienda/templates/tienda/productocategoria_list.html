@@ -16,9 +16,12 @@
 
         {% for categoria in categorias %}
             <li>{{ categoria.nombre }}
-                <a href="{% url 'tienda:productocategoria_detail' categoria.codigo %}">Detalle</a>
-                <a href="{% url 'tienda:productocategoria_update' categoria.codigo %}">Cambiar</a>
-                <a href="{% url 'tienda:productocategoria_delete' categoria.codigo %}">Borrar</a>
+                <a href="{% url 'tienda:productocategoria_detail' categoria.codigo %}"><i title="Ver detalle" class="bi bi-eye-fill" style="color:chartreuse;""></i></a>
+                <a href="{% url 'tienda:productocategoria_update' categoria.codigo %}"> <i title="Cambiar" class="bi bi-pencil-fill" style="color:blue"></i></a>
+                <a href="{% url 'tienda:productocategoria_delete' categoria.codigo %}"><i title="Borrar"class="bi bi-trash-fill" style="color:red"></i></a>
+
+
+            
             </li>
         {% endfor %}
     </ul>

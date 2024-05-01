@@ -9,15 +9,14 @@
     <div class="fs-3 pb-4">
         <a href="{% url 'tienda:carrito_create' %}">Crear Carrito</a>
     </div>
-    <ul>
+    <ul >
 
         {% for carrito in carritos %}
-            <li>{{ carrito }}
+            <li >{{ carrito }}
 
-                <a href="{% url 'tienda:carrito_detail' carrito.id %}">Detalle</a>
-                <a href="{% url 'tienda:carrito_update' carrito.id %}">Cambiar</a>
-                <a href="{% url 'tienda:carrito_delete' carrito.id %}">Borrar</a>
-                </button>
+                <a class="ms-5" href="{% url 'tienda:carrito_detail' carrito.id %}"><i title="Ver detalle" class="bi bi-eye-fill" style="color:chartreuse;""></i></a>
+                <a href="{% url 'tienda:carrito_update' carrito.id %}"><i title="Cambiar" class="bi bi-pencil-fill" style="color:blue"></i></a>
+                <a href="{% url 'tienda:carrito_delete' carrito.id %}"><i title="Borrar"class="bi bi-trash-fill" style="color:red"></i></a>
                                     
             </li>
         {% endfor %}
