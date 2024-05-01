@@ -12,11 +12,17 @@ class RolForm(forms.ModelForm):
         model = models.Rol
         fields = "__all__"
         widgets = {
-            "nombre": forms.TextInput(attrs={"class": "form-control"}),
-            "descripcion": forms.TextInput(attrs={"class": "form-control"}),
+            "nombre": forms.TextInput(attrs={"class": "form-control", "style": "width: 300px;"}),
+            "descripcion": forms.TextInput(attrs={"class": "form-control", "style": "width: 600px;"}),
         }
 
 class UsuarioForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(UsuarioForm, self).__init__(*args, **kwargs)
+        
+        # Filtra los roles activos y donde el nombre del rol sea diferente a "Cliente@"
+        self.fields['rol'].queryset = models.Rol.objects.exclude(nombre="Cliente")
+
     class Meta:
         model = models.Usuario
         fields = "__all__"
@@ -25,7 +31,7 @@ class UsuarioForm(forms.ModelForm):
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
             "apellido": forms.TextInput(attrs={"class": "form-control"}),
             "email": forms.EmailInput(attrs={"class": "form-control"}),
-            "rol": forms.Select(attrs={"class": "form-control"}),
+            "rol": forms.Select(attrs={"class": "form-control", "style": "width: 300px;"}),
         }
 
 class ClienteForm(forms.ModelForm):

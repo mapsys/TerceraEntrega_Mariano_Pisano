@@ -9,7 +9,7 @@
         <meta name="author" content="" />
         <title>
             {% block title %}
-                App Coderhouse
+                Mi Tercera Entrega
             {% endblock title %}
         </title>
         <!-- Favicon-->
@@ -25,12 +25,16 @@
         <!-- Page Content-->
         <div class="container px-4 px-lg-5">
             <div class="row align-items-center my-5">
-                <h1 class="pb-lg-3 text-white bg-info px-3 py-2 rounded">
+                <h2 class="pb-3 text-white bg-info px-3 py-2 rounded">
                     {% block titulo %}
                         App Coder
                     {% endblock titulo %}
-                </h1>
-            </div>
+                </h2>
+                <h4 class="pb-lg-3 text-black text-center  px-3 py-2 rounded">
+                    {% block Subtitulo %}
+                        Bienvenidos de la tienda de los productos mas fascinantes que podras encontrar
+                    {% endblock Subtitulo %}
+                </h4>
             {% block contenido %}
             {% endblock contenido %}
         </div>

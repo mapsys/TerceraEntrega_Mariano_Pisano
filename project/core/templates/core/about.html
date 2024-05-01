@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %}
+SOBRE MI
+{% endblock titulo %}
+{% block Subtitulo %}
+Aqui encontraras un poco de informacion sobre el autor de la pagina
+{% endblock Subtitulo %}
+{% block contenido %}
+    
+
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0"
+             src="{% static 'core/img/about.webp' %}"
+             alt="..." />
+    </div>
+    <div class="col-lg-5">
+        <h1 class="font-weight-light">Quien soy?</h1>
+        <p>
+            ¡Hola! Soy Mariano, un apasionado tester con 19 años de experiencia en la industria del desarrollo de software. Desde que comencé mi carrera en el testing, he encontrado una fascinación profunda en garantizar que los productos y aplicaciones sean de la más alta calidad posible.
+
+Mi enfoque principal siempre ha sido asegurarme de que la funcionalidad de las aplicaciones esté impecable. Con un ojo meticuloso para los detalles y una actitud proactiva hacia la resolución de problemas, me esfuerzo por identificar y abordar cualquier defecto o incongruencia en el software que estoy probando.
+
+A lo largo de los años, he desarrollado habilidades sólidas en todas las áreas del testing, desde pruebas manuales y automatizadas hasta pruebas de rendimiento y seguridad. Me enorgullece decir que he contribuido significativamente a la mejora de la calidad del software en los proyectos en los que he participado.
+
+Además de mi pasión por el testing, también tengo un profundo interés en la programación. Aunque no soy un experto en diseño, me encanta sumergirme en el código y encontrar soluciones creativas a los desafíos técnicos que encuentro en el camino.
+
+En resumen, soy un tester comprometido y apasionado que se esfuerza por garantizar que cada producto que toco cumpla con los más altos estándares de calidad y funcionalidad. Estoy emocionado de seguir aprendiendo y creciendo en esta apasionante industria.
+
+¡Gracias por visitar mi perfil!
+        </p>
+        
+    </div>
+    
+</div>
+ {% endblock contenido %}

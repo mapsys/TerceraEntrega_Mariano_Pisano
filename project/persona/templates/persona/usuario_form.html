@@ -3,7 +3,9 @@
 {% block titulo %}
     Personas: Creacion de usuarios
 {% endblock titulo %}
-
+{% block Subtitulo %}
+    En esta pantalla solo podra de alta usuarios del sistema, no asi Clientes
+{% endblock Subtitulo %}
 {% block contenido %}
     
     <form method="post">
@@ -11,7 +13,7 @@
         <table>
             {{ form.as_table }}
         </table>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary mt-5 ">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
         <a href="{% url 'persona:rol_list' %}">Volver a Usuarios</a>
