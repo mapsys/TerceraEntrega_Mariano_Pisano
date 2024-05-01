@@ -1,8 +1,14 @@
 #Proyecto coderhouse
 
-Comision: 
+Comision: 54135
 
 Alumno: Mariano Pisano
+
+En primer lugar quiero decir que me da verguenza esta entrega.
+SI bien cumple lo pedido y trate de no hacer solo un copy paste de lo que dio el profe
+agregandole cosas mias que investigue, he de decir que como estuve de vacaciones tuve solo dos dias para hacerla
+No es una excusa ni nada, solo que me gusta hacer entregas lindas y con muchas cosas extras
+
 
 ## Acerca del proyecto
 El proyecto es el inicio de una tienda de compra de diferentes articulos que maneja la creacion y mantenimiento de usuarios y de productos
