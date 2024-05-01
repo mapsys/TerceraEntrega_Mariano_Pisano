@@ -32,3 +32,4 @@ El diseño desde el punto de vista estetico que nunca fue mi fuerte
 ## Problemas conocidos
 No logro pasarle a las cards un bloque URL de django para que el boton Mas Info nos lleve a esa seccion
 hasta el momento no logro que en la vista de carritos se vean listados los productos
+EN las card de la pagina principal tuve que repetirlas ya que no encontre la manera de pasarle una URL como variable al comnponente CARD.
